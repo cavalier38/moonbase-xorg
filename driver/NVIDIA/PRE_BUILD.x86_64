@@ -23,4 +23,5 @@
 
   # Don't compile 32-bits on pure 64-bit Lunar
   sedit 's/COMPAT_32_SRC *= */\0#/' nvidia-installer-$VERSION/Makefile &&
-  sedit 's/-DNV_X86_64//'           nvidia-installer-$VERSION/Makefile
+  sedit 's/-DNV_X86_64//'           nvidia-installer-$VERSION/Makefile &&
+  sedit "s@-lGL@-L$SOURCE_DIRECTORY -lGL@" nvidia-installer-$VERSION/Makefile

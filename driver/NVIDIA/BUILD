@@ -12,13 +12,13 @@ if [[ "$GCCKNL" != "$GCCNOW" ]]; then
 fi &&
 
 # Temporary paths and symlinks to make sources compilable
-LD_LIBRARY_PATH="$SOURCE_DIRECTORY:$LD_LIBRARY_PATH" &&
+export LD_LIBRARY_PATH="$SOURCE_DIRECTORY:$LD_LIBRARY_PATH" &&
 CFLAGS="-L$SOURCE_DIRECTORY $CFLAGS"                 &&
 export SYSSRC=/usr/src/linux                         &&
 
-ln -s libGL.so.$VERSION            nvidia-installer-$VERSION/libGL.so           &&
-ln -s libnvidia-glcore.so.$VERSION nvidia-installer-$VERSION/libGLcore.so.1     &&
-ln -s libnvidia-tls.so.$VERSION    nvidia-installer-$VERSION/libnvidia-tls.so.1 &&
+ln -s libGL.so.$VERSION            libGL.so           &&
+ln -s libnvidia-glcore.so.$VERSION libGLcore.so.1     &&
+ln -s libnvidia-tls.so.$VERSION    libnvidia-tls.so.1 &&
 
 echo libXvMCNVIDIA_dynamic.so.1 > XvMCConfig &&
 
