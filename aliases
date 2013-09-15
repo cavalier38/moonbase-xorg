@@ -1,0 +1,3 @@
+%X:XOrg7
+%GLX:mesa-libgl NVIDIA
+%VDPAUDEVICE:NVIDIA
