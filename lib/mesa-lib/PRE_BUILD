@@ -1,0 +1,5 @@
+default_pre_build  &&
+
+# install libGL to /usr/lib/mesa to handle conflicts
+sedit 's@lib_LTLIBRARIES@libmesadir=$(libdir)/mesa\nlibmesa_LTLIBRARIES@' src/glx/Makefile.am  &&
+sedit 's@lib_LTLIBRARIES@libmesadir=$(libdir)/mesa\nlibmesa_LTLIBRARIES@' src/gallium/targets/libgl-xlib/Makefile.am
